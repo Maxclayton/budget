@@ -18,7 +18,7 @@ body {
   justify-content: flex-end;
   height: 35vh;
   padding-top: 15vh;
-  
+  align-items: center;
 }
 
 #syd-btn {
@@ -41,6 +41,7 @@ body {
   text-align: center;
   margin-top: 5vh;
 border:none;
+width:45%;
 }
 
 h1{
