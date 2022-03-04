@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="max.css">
+    </head>
+    <body>
+      <div class="max-wrap">
+      <form action="https://sheetdb.io/api/v1/1374pstiu3jed" method="POST" id="sheetdb-form">
+        <h1>Max</h1> <input id="max" type="number" name="data[AMOUNT_MAX]">
+        
+        <button id="max-btn" type="submit">SUBMIT</button> 
+        
+
+
+      </form>
+
+ 
+
+
+    </div>
+    </body>
+
+    <script>
+      var form = document.getElementById('sheetdb-form');
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        fetch(form.action, {
+            method : "POST",
+            body: new FormData(document.getElementById("sheetdb-form")),
+        }).then(
+            response => response.json()
+        ).then((html) => {
+          // you can put any JS code here
+          document.getElementById("max").value = '';
+          alert('success')
+
+        });
+      });
+
+
+
+    </script>
+</html>
