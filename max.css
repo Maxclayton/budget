@@ -51,3 +51,15 @@ body {
   font-size: 45px;
   color: white;
   }
+
+  .nav-btn {
+    float: right;
+    margin-top: 45vh;
+    border-radius: 8px;
+    margin-top: 2vh;
+    border: none;
+    background-color: #BB4430;
+    color: white;
+    font-weight: bold;
+    height:20px;
+  }
