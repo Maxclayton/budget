@@ -32,6 +32,7 @@ body {
     color: white;
     font-weight: bold;
     letter-spacing: 10px;
+    box-shadow: 5px 10px #888888;
 }
 
 #syd {
