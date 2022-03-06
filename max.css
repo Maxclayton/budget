@@ -29,7 +29,7 @@ body {
   background-color: #bb4430;
   color: white;
   font-weight: bold;
-  letter-spacing: 10px;
+  letter-spacing: 10.5px;
   box-shadow: 5px 10px #702a1d;
 }
 
@@ -44,7 +44,6 @@ body {
 }
 
 h1 {
-  font-family: "Cedarville Cursive", cursive;
   font-family: "Montserrat", sans-serif;
   font-size: 45px;
   color: white;
@@ -64,7 +63,6 @@ h1 {
 
 h1,
 td {
-  font-family: "Cedarville Cursive", cursive;
   font-family: "Montserrat", sans-serif;
   font-size: 45px;
   color: white;
@@ -74,7 +72,6 @@ td {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Cedarville Cursive", cursive;
   font-family: "Montserrat", sans-serif;
   font-size: 45px;
   color: white;
@@ -83,7 +80,6 @@ td {
 #thank-you {
   padding-top:10px;
   padding-bottom:10px;
-  font-family: "Cedarville Cursive", cursive;
   font-family: "Montserrat", sans-serif;
   color: #bb4430;
   text-decoration: underline;
