@@ -9,7 +9,8 @@ body {
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  padding-top: 15vh;
 }
 
 #sheetdb-form {
@@ -17,7 +18,6 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   height: 35vh;
-  padding-top: 15vh;
   align-items: center;
 }
 
@@ -45,10 +45,18 @@ border:none;
 width:45%;
 }
 
-h1{
+h1, td{
 
     font-family: 'Cedarville Cursive', cursive;
 font-family: 'Montserrat', sans-serif;
 font-size: 45px;
 color: white;
+}
+
+.balance {
+
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
 }

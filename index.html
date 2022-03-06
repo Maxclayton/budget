@@ -11,10 +11,30 @@
     </head>
     <body>
       <div class="max-wrap">
+
+        <div class="balance">
+          <table>
+         
+            <tbody data-sheetdb-url="https://sheetdb.io/api/v1/1374pstiu3jed"
+                   data-sheetdb-sort-by="age"
+                   data-sheetdb-sort-order="desc">
+                  
+              <tr>
+                <td>{{BALANCE_MAX}}</td>
+              </tr>
+              
+            </tbody>
+          </table>
+          </div>
+
+
+
+
+
       <form action="https://sheetdb.io/api/v1/1374pstiu3jed" method="POST" id="sheetdb-form">
         <h1>Max</h1> <input id="max" type="number" step="0.01" name="data[AMOUNT_MAX]">
         
-        <button id="max-btn" type="submit">SUBMIT</button> 
+        <button id="max-btn" type="submit" onClick="window.location.reload();">SUBMIT</button> 
         
 
 
@@ -26,6 +46,10 @@
 
     </div>
     </body>
+
+
+    <script src="https://sheetdb.io/handlebars.js"></script>
+
 
     <script>
       var form = document.getElementById('sheetdb-form');

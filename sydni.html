@@ -11,18 +11,40 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="syd.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     </head>
     <body>
         <div class="syd-wrap">
+          <div class="balance">
+          <table>
+         
+            <tbody data-sheetdb-url="https://sheetdb.io/api/v1/1374pstiu3jed"
+                   data-sheetdb-sort-by="age"
+                   data-sheetdb-sort-order="desc">
+                  
+              <tr>
+                <td>{{BALANCE_SYD}}</td>
+              </tr>
+              
+            </tbody>
+          </table>
+          </div>
+
+
         <form action="https://sheetdb.io/api/v1/1374pstiu3jed" method="POST" id="sheetdb-form">
-                <h1>Sydni</h1>
+              <a onClick="window.location.reload();"><h1>Sydni</h1></a>  
     
            <input id="syd"  type="number"  step="0.01" name="data[AMOUNT_SYD]">
     
-            <button id="syd-btn" type="submit">SUBMIT</button> 
+            <button id="syd-btn" type="submit" onClick="window.location.reload();">SUBMIT</button> 
     
           </form>
           </div>
+
+          <script src="https://sheetdb.io/handlebars.js"></script>
+
           <script>
             var form = document.getElementById('sheetdb-form');
             form.addEventListener("submit", e => {
