@@ -1,74 +1,82 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="max.css">
-    </head>
-    <body>
-      <div class="max-wrap">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="max.css" />
+  </head>
+  <body>
+    <div class="max-wrap">
+      <div class="balance">
+        <table style="padding-top: 25px">
+          <tbody
+            data-sheetdb-url="https://sheetdb.io/api/v1/1374pstiu3jed"
+            data-sheetdb-sort-by="age"
+            data-sheetdb-sort-order="desc"
+          >
+            <tr>
+              <p>$</p>
+              <td id="balance_actual" type="Number">{{BALANCE_MAX}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <div class="balance">
-          <table>
-         
-            <tbody data-sheetdb-url="https://sheetdb.io/api/v1/1374pstiu3jed"
-                   data-sheetdb-sort-by="age"
-                   data-sheetdb-sort-order="desc">
-                  
-              <tr>
-                <td>{{BALANCE_MAX}}</td>
-              </tr>
-              
-            </tbody>
-          </table>
-          </div>
+      <form
+        action="https://sheetdb.io/api/v1/1374pstiu3jed"
+        method="POST"
+        id="sheetdb-form"
+      >
+        <h2 id="thank-you"></h2>
 
+        <h1>Max</h1>
+        <input id="max" type="number" step="0.01" name="data[AMOUNT_MAX]" />
 
-
-
-
-      <form action="https://sheetdb.io/api/v1/1374pstiu3jed" method="POST" id="sheetdb-form">
-        <h1>Max</h1> <input id="max" type="number" step="0.01" name="data[AMOUNT_MAX]">
-        
-        <button id="max-btn" type="submit" onClick="window.location.reload();">SUBMIT</button> 
-        
-
-
+        <button id="max-btn" type="submit" onClick="minus();">SUBMIT</button>
       </form>
 
- 
-      <button class="nav-btn" onclick="window.location.href='sydni.html'" >Next Page</button>
-
-
+      <button class="nav-btn" onclick="window.location.href='sydni.html'">
+        Next Page
+      </button>
     </div>
-    </body>
+  </body>
 
+  <script src="https://sheetdb.io/handlebars.js"></script>
 
-    <script src="https://sheetdb.io/handlebars.js"></script>
-
-
-    <script>
-      var form = document.getElementById('sheetdb-form');
-      form.addEventListener("submit", e => {
-        e.preventDefault();
-        fetch(form.action, {
-            method : "POST",
-            body: new FormData(document.getElementById("sheetdb-form")),
-        }).then(
-            response => response.json()
-        ).then((html) => {
+  <script>
+    var form = document.getElementById("sheetdb-form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+      })
+        .then((response) => response.json())
+        .then((html) => {
           // you can put any JS code here
-          document.getElementById("max").value = '';
-          alert('success')
+          document.getElementById("max").value = "";
+          document.getElementById("thank-you").innerHTML =
+            "Thank you! The amount has been updated.";
 
+          setTimeout(function () {
+            document.getElementById("thank-you").innerHTML = "";
+          }, 3000);
         });
-      });
+    });
 
+    function minus() {
+      var balance = document.getElementById("balance_actual").innerHTML;
+      var deposit = document.getElementById("max").value;
 
+      var newBalance = Number(balance) - Number(deposit);
 
-    </script>
+      document.getElementById("balance_actual").innerHTML = newBalance;
+
+      console.log(Number(balance) - Number(deposit));
+    }
+  </script>
 </html>
