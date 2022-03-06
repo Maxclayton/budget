@@ -81,6 +81,8 @@ td {
 }
 
 #thank-you {
+  padding-top:10px;
+  padding-bottom:10px;
   font-family: "Cedarville Cursive", cursive;
   font-family: "Montserrat", sans-serif;
   color: #bb4430;
